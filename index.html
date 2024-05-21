@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<title>Индивидуальный личный кабинет</title>
+	<link href="/css/style-new.css?5" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style-new.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/styletabs.css">
+	<link rel="stylesheet" href="css/modal.css">
+	<link rel="stylesheet" href="css/swiper.css">
+</head>
+
+<body>
+	<div class="page ">
+		<div class="toggle-nav js-toggle-nav">
+			<a href="#" class="toggle-close js-toggle-close"></a>
+			<ul class="toggle-menu disable">
+			  <li><a id="profile-mob" class="header-menu__link js-toggle-close" onclick="toMenuTab('#profile');">Профиль</a></li>
+			 	<!-- <li><a id="pay-mob" class="header-menu__link js-toggle-close" onclick="toMenuTab('#pay');">Оплата</a></li> -->
+			  <li><a id="invitations-mob" class="header-menu__link js-toggle-close" onclick="toMenuTab('#invitations');">Приглашения</a></li>
+			  <li><a id="programm-mob" class="header-menu__link js-toggle-close" onclick="toMenuTab('#programm');">Расписание</a></li>
+			</ul>
+			<a id="lang-mob" href="/en/llk/" class="lang">EN</a>  
+			<div id="exit-mob" class="header-nav__btn exit disable" onclick="localStorage.clear(); location.reload();">Выход</div>
+		  </div>
+		<header class="header">
+			<div class="header__inner">
+				<div class="logo">
+					<a href="https://tashkent.bigindustrialweek.com/ru/" target="_blank"><img src="/img/logo.svg" width="260" alt=""></a>
+				</div>		
+							
+				<div class="header-menu disable" id="menu">        
+					<a id="profile" class="header-menu__link" onclick="toMenuTab('#profile');">Профиль</a>
+					<!-- <a id="pay" class="header-menu__link" onclick="toMenuTab('#pay');">Оплата</a> -->
+					<a id="invitations" class="header-menu__link" onclick="toMenuTab('#invitations');">Приглашения</a>
+					<a id="programm" class="header-menu__link" onclick="toMenuTab('#programm');">Расписание</a>
+				  </div>
+				<div class="header-nav d-flex">
+					<div class="header-nav__btns">
+						<a id="lang" href="/en/llk/" class="lang">EN</a>	
+						<div id="exit" class="header-nav__btn exit disable" onclick="localStorage.clear(); location.reload();">Выход</div>
+					</div>						
+				</div>
+				<a href="#" class="toggle js-toggle"></a>		
+			</div>
+		</header>
+		<main class="page__main">
+			<div class="gradient"></div>
+		<!-- <div id="profile" class="registration">
+			<div class="registration-title">Индивидуальный личный кабинет</div>
+			<div id="embeddedApp" api-key="f28c35b2b70863412a91cbf95931b0bba2e28ec32babf70c216453afadedf83a06fdb8de211fa251c2c2f41c37ddff87" force-lng-code = "ru" server="innoserver.accreditation.ru">
+			</div> -->
+			<script type="text/javascript" src="https://innoapp.accreditation.ru/embedded-app.js"></script>
+			<div id="schedule-main" class="programm disable">
+				<div class="programm__nav">
+					<div class="programm__nav__item" onclick="toMainTab('tab-date');">
+						<a id="tab-date" class="tab-date active">
+							By days 
+							<svg width="24" height="24" class="ico-svg">
+								<use xlink:href="./img/svg/ico-calendar.svg#ico-calendar"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="programm__nav__item"  onclick="toMainTab('tab-trek');">
+						<a id="tab-trek" class="disable">
+							По тематическим трекам
+							<svg width="24" height="24" class="ico-svg">
+								<use xlink:href="./img/svg/ico-sheme.svg#ico-sheme"></use>
+							</svg>
+	
+						</a>
+					</div>
+					<div class="programm__nav__item" onclick="toMainTab('tab-on');">
+						<a id="tab-on" class="tab-favorite">
+							Favorites
+							<svg width="19" height="20" class="ico-svg">
+								<use xlink:href="./img/svg/ico-star.svg#ico-star"></use>
+							</svg>
+	
+						</a>
+					</div>
+				</div>
+	
+				<div class="programm__nav__content">
+	
+					<!-- TAB-CONTENT--1 -->
+					<div class="tab-content active" id="tab-date-content">
+						<div class="scroll-nav">
+							<div id="tabs-dates" class="programm__subtabs">
+									
+							</div>						
+						</div>
+						<div id="dates-programm" class="programm__subtabs__content">
+							
+							<!--div id="test" class="programm-card" style="border-left-color: #F4E500;" onclick="changeEvent(334566)">
+								<div class="programm-card__favorite">
+									<svg width="16" height="17" class="ico-svg">
+										<use xlink:href="./img/svg/ico-star.svg#ico-star"></use>
+									</svg>
+									<span class="favorite-on">В избранном</span>
+									<span class="favorite-off">В избранноe</span>
+								</div>
+								<div class="programm-card__time">
+									<img src="./img/clock.svg" width="16" height="16" alt="">								
+									<div>
+										10:00 - 11:30
+										<div class="programm-card__date">10.07.2023</div>
+									</div>
+								</div>
+								<div class="programm-card__body">
+									<div>
+										<div class="programm-card__category" style="color:#F4E500;">Новая мобильность</div>
+										<a class="programm-card__title modal-toggle-334566" onclick="event.stopPropagation(); showHideModal(334566); window.scrollTo(0,0);">Пленарная сессия «Транспорт будущего: вызовы и решения»</a>
+										<div class="programm-card__address">
+											<i class="fa fa-map-marker" aria-hidden="true"></i>
+											Зал 3.1
+										</div>
+									</div>
+									<div class="programm-card__logo">
+										<div class="swiper swiper-container-horizontal">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide swiper-slide-active">
+													<img src="https://innoprom.accreditation.ru/img/programm/brand-logo.svg">
+													<span>Партнер мероприятия</span>
+												</div>
+											</div>
+											<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+												<span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span>
+											</div>
+											<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+											<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+										</div>
+									</div>
+								</div>
+							</div-->
+							
+						</div>
+					</div>
+					<!-- // TAB-CONTENT--1 -->
+	
+					<!-- TAB-CONTENT--2 -->
+					<div class="tab-content disable" id="tab-trek-content" >
+						<div class="programm__subtabs-track">
+							<!-- <div class="programm__subtabs__item-track" onclick="toTrekTab('08');">
+								<a id="subtab-trek-08" class="" style="">
+									<svg width="14" height="20" class="ico-svg" style="fill: #00ccff;">
+										<use xlink:href="./img/svg/ico-track.svg#ico-track"></use>
+									</svg>
+									Производительность труда
+								</a>
+							</div>				
+							<div class="programm__subtabs__item-track" onclick="toTrekTab('08');">
+								<a id="subtab-trek-08" class="active" style="">
+									<svg width="14" height="20" class="ico-svg" style="fill: #800000;">
+										<use xlink:href="./img/svg/ico-track.svg#ico-track"></use>
+									</svg>
+									Цифровое производство
+								</a>
+							</div>	 -->			
+	
+						</div>
+						<div id="treks-programm" class="programm__subtabs__content">
+											
+						</div>				
+					</div><!-- //TAB-CONTENT--2 -->
+					
+					<!-- TAB-CONTENT--3 -->
+					<div class="tab-content disable" id="tab-on-content">
+						<div class="programm__subtabs__content">
+							<div id="cards-on" class="programm-list">	
+							
+							</div>
+						</div>
+					</div><!-- //TAB-CONTENT--3 -->
+				</div>
+			</div>
+		</div>
+		<div class="sponsors">
+			<div class="sponsors__title">Спонсоры и партнёры:</div>
+			<div class="sponsors__list">
+				<div class="sponsors__list__item">
+					<a href="https://usm-group.com/ru/company" target="_blank"><img src="/img/sponsor-1.png" width="61" alt=""></a>
+					<div class="sponsors__list__item__title">Генеральный партнёр</div>
+				</div>
+				<div class="sponsors__list__item">
+					<a href="https://www.gazprombank.ru/" target="_blank"><img src="/img/sponsor-2.png" width="128" alt=""></a>
+					<div class="sponsors__list__item__title">Стратегический партнёр</div>
+				</div>
+				<div class="sponsors__list__item">
+					<a href="https://www.st.tech/" target="_blank"><img src="/img/sponsor-4.png" width="145" alt=""></a>
+					<div class="sponsors__list__item__title sponsors__list__item__title---nowrap">Бизнес-партнёр</div>
+				</div>
+				<div class="sponsors__list__item">
+					<a href="https://prav.tatarstan.ru/ " target="_blank"><img src="/img/sponsor-8.svg" width="136" alt=""></a>
+					<div class="sponsors__list__item__title sponsors__list__item__title---nowrap">Бизнес-партнёр</div>
+				</div>
+				<div class="sponsors__list__item">
+					<a href="https://midural.ru" target="_blank"><img src="/img/sponsor-3.png" width="171" alt=""></a>
+					<div class="sponsors__list__item__title sponsors__list__item__title---nowrap">Бизнес-партнёр</div>
+				</div>
+				<div class="sponsors__list__item">
+					<a href="https://magnit.ru/" target="_blank"><img src="/img/sponsor-9.png" width="45" alt=""></a>
+					<div class="sponsors__list__item__title sponsors__list__item__title---nowrap">Бизнес-партнёр</div>
+				</div>
+				
+				<div class="sponsors__list__item">
+					<a href="https://tmholding.ru/" target="_blank"><img src="/img/sponsor-6.svg" width="43" alt=""></a>
+					<div class="sponsors__list__item__title sponsors__list__item__title---nowrap">Бизнес-партнёр</div>
+				</div>
+
+				<div class="sponsors__list__item">
+					<a href="https://1c.ru/" target="_blank"><img src="/img/sponsor-5.png" width="78" alt=""></a>
+					<div class="sponsors__list__item__title sponsors__list__item__title---nowrap">Бизнес-партнёр</div>
+				</div>
+
+				<div class="sponsors__list__item">
+					<a href="https://www.rosatom.ru/index.html" target="_blank"><img src="/img/sponsor-7.svg" width="66" alt=""></a>
+					<div class="sponsors__list__item__title sponsors__list__item__title---nowrap">Бизнес-партнёр</div>
+				</div>
+			</div>
+		</div>	
+	</main>
+	<footer class="footer">
+		<div class="footer__inner">
+			<a href="https://tashkent.bigindustrialweek.com/ru/" target="_blank" class="logo">
+				<img src="/img/logo-wh.svg" width="200" alt="">
+			</a>
+			<div class="organizers">
+				<div class="organizers__item">
+					<div class="organizers__title">Организаторы:</div>							
+					<div class="organizers__logo">
+						<a href="https://miit.uz/ru/" target="_blank"><img src="/img/org-1-wh.svg" width="180" alt=""></a>
+					</div>
+					<div class="organizers__logo">
+						<a href="https://minpromtorg.gov.ru/" target="_blank"><img src="/img/org-2-wh.svg" width="141" alt=""></a>
+					</div>
+				</div>
+				<div class="organizers__item">
+					<div class="organizers__title">Оператор:</div>			
+					<div class="organizers__logo">
+						<a href="https://business-event.com/" target="_blank"><img src="/img/org-3-wh.svg" width="131" alt=""></a>
+					</div>
+				</div>
+			</div>				
+			<div class="footer__item">
+				<p>Требуется помощь с регистрацией?</p>
+				<div class="footer__btns">
+					<a class="footer__btns__item" href="mailto:innoprom-tashkent@accreditation.ru">
+						<img src="/img/mail.svg" alt="">
+						<span>innoprom-tashkent@accreditation.ru</span>
+					</a>				
+				</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+</body>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="swiper.min.js"></script>
+<script type="text/javascript" src="llk-script.js"></script>
+<script type="text/javascript" src="scheduleTabs.js"></script>
+<script type="text/javascript" src="genStandardTabs.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script>
+	
+!(function($) {
+    "use strict";
+
+
+    $(document).on('click', '.js-toggle', function(e) {
+    	e.preventDefault();
+		$('.js-toggle-nav').addClass('show');
+		$('body').addClass('toggle-on');
+		
+    });
+
+    $(document).on('click', '.js-toggle-close', function(e) {
+    	e.preventDefault();
+		$('.js-toggle-nav').removeClass('show');
+		$('body').removeClass('toggle-on');
+		
+    });
+
+
+})(jQuery);
+	</script>
+	
+
+</html>
