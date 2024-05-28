@@ -1,4 +1,4 @@
-// var myId = '1447023';
+var myId = '1447023';
 // console.log('myid ' + myId);
 var myEvents = [];
 var events = [];
@@ -151,8 +151,62 @@ function genEventPopup(obj) {
 	if (!!$('#event-popup-' + obj.id)) {
 		$('#event-popup-' + obj.id).remove();
 	}
-	$('.page').append('<div id=\"event-popup-' + obj.id + '\" class=\"modal\"><div class=\"modal-overlay modal-toggle-' + obj.id + '\" onclick=\"showHideModal(' + obj.id + ')\"></div><div class=\"modal-wrapper modal-transition\"><div class=\"modal-inner\"><button class=\"modal-close modal-toggle-' + obj.id + '\"  onclick=\"showHideModal(' + obj.id + ')\"><img src=\"../img/close.svg\" alt=\"\"></button><div class=\"modal-body\"><div class=\"event-modal\"><div id=\"add-' + obj.id + '\" onclick=\"changeEvent(' + obj.id + ')\" class=\"event-modal__add-favorite\"><svg width="16" height="17" class="ico-svg"><use xlink:href="../img/svg/ico-star.svg#ico-star"></use></svg><span class="favorite-on">В избранном</span><span class="favorite-off">В избранноe</span></div><div class=\"event-modal__title\">' + obj.title + '</div><div class=\"event-modal__body\"><div><div class=\"event-modal__category\"style="display:none;">Тематический трек</div><div class=\"event-modal__subtitle\" style=\"color:' + obj.trek_color + ';\">' + obj.trek + '</div><div class=\"event-modal__info\"><div class=\"event-modal__time\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i><div>' + obj.test_time + '<br>' + obj.time_start + ' - ' + obj.time_end + '</div></div><div class=\"event-modal__address\"><i class="fa fa-map-marker'+ `${obj.hall!=''? '':'disabled'}` + '" aria-hidden="true"></i>' + `${obj.hall!=''? ''+ obj.hall:''}` + '</div></div>' + obj.description + '</div><div class=\"event-modal__partner\"><div class=\"event-modal__partner__title'+`${obj.partner_img!=''? '':' disable'}`+ '\">Партнер мероприятия</div><div class=\"event-modal__partner__list\">' + obj.partner_img.replace(/;/g,'') + '</div></div></div></div></div></div></div></div>');
+	// $('.page').append('<div id=\"event-popup-' + obj.id + '\" class=\"modal\"><div class=\"modal-overlay modal-toggle-' + obj.id + '\" onclick=\"showHideModal(' + obj.id + ')\"></div><div class=\"modal-wrapper modal-transition\"><div class=\"modal-inner\"><button class=\"modal-close modal-toggle-' + obj.id + '\"  onclick=\"showHideModal(' + obj.id + ')\"><img src=\"../img/close.svg\" alt=\"\"></button><div class=\"modal-body\"><div class=\"event-modal\"><div id=\"add-' + obj.id + '\" onclick=\"changeEvent(' + obj.id + ')\" class=\"event-modal__add-favorite\"><svg width="16" height="17" class="ico-svg"><use xlink:href="../img/svg/ico-star.svg#ico-star"></use></svg><span class="favorite-on">В избранном</span><span class="favorite-off">В избранноe</span></div><div class=\"event-modal__title\">' + obj.title + '</div><div class=\"event-modal__body\"><div><div class=\"event-modal__category\"style="display:none;">Тематический трек</div><div class=\"event-modal__subtitle\" style=\"color:' + obj.trek_color + ';\">' + obj.trek + '</div><div class=\"event-modal__info\"><div class=\"event-modal__time\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i><div>' + obj.test_time + '<br>' + obj.time_start + ' - ' + obj.time_end + '</div></div><div class=\"event-modal__address\"><i class="fa fa-map-marker'+ `${obj.hall!=''? '':'disabled'}` + '" aria-hidden="true"></i>' + `${obj.hall!=''? ''+ obj.hall:''}` + '</div></div>' + obj.description + '</div><div class=\"event-modal__partner\"><div class=\"event-modal__partner__title'+`${obj.partner_img!=''? '':' disable'}`+ '\">Партнер мероприятия</div><div class=\"event-modal__partner__list\">' + obj.partner_img.replace(/;/g,'') + '</div></div></div></div></div></div></div></div>');
+
+	$('.page').append(		
+`<div id="event-popup-${obj.id}" class="modal">
+  <div class="modal-overlay modal-toggle-${obj.id}" onclick="showHideModal(${obj.id})"></div>
+  <div class="modal-wrapper modal-transition">
+    <div class="modal-inner">
+      <div class="modal-body">
+        <div class="event-modal">
+          <div class="event-modal__nav">
+            <div id="add-${obj.id}" onclick="changeEvent(${obj.id})" class="event-modal__add-favorite"><svg width="16"
+                height="17" class="ico-svg">
+                <use xlink:href="../img/svg/ico-star.svg#ico-star"></use>
+              </svg><span class="favorite-on">В избранном</span><span class="favorite-off">В избранноe</span>
+            </div>
+            <button class="modal-close modal-toggle-${obj.id}" onclick="showHideModal(${obj.id})">Закрыть</button>
+          </div>        
+          <div class="event-modal__title">${obj.title}</div>
+          <div class="event-modal__body">
+					  <div class="event-modal__container">
+              <div class="event-modal__category">Тематический трек</div>
+              <div class="event-modal__subtitle" style="color:'${obj.trek_color}';">${obj.trek}</div>
+              <div class="event-modal__info">
+                <div class="event-modal__date">
+                  <div>
+                    <span class="event-modal__info-title">${obj.test_time}</span>
+                    <br>
+                    <span class="event-modal__info-subtitle">${obj.time_start} - ${obj.time_end}</span>
+                  </div>
+                </div>
+                <!-- <div class="event-modal__time">
+                  <div>
+                    <span class="event-modal__info-title"></span>
+                    <br>
+                  <span class="event-modal__info-subtitle">time</span></div>
+                 </div> -->
+                 <!-- <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+                <div class="event-modal__address"${obj.hall!=''? '':'disabled'}>${obj.hall!=''? ''+ obj.hall:''}</div>
+                <div class="event-modal__partner">
+                  <div class='event-modal__partner__title${obj.partner_img!=''? '':' disable'}'>Партнер<br> мероприятия</div>
+                  <div class="event-modal__partner__list">${obj.partner_img.replace(/;/g,'')}</div>
+                  </div>
+              </div>
+              ${obj.description}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`
+	)
 }
+
+
 
 function addMyEvents() {
 	console.log('addMyEvents');

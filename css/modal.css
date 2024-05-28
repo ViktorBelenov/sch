@@ -71,15 +71,19 @@
 }
 
 .modal-close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 1em;
-	color: #aaa;
-	background: none;
-	border: 0;
+	justify-content: center;
+	right: 30px;
+	top: 50px;
 	cursor: pointer;
-	z-index: 1;
+	border: 1px solid #8B8788;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	padding: 17px 15px;
+	min-width: 175px;
+	border-radius: 3px;
+	background-color: #fff;
 }
 
 .modal-close:hover {
