@@ -1,8 +1,8 @@
 // const server = 'https://eventline.accredcenter.ru';
-const days = [{"date":"21.04.2024","day":"Sunday"},
-			  {"date":"22.04.2024","day":"Monday"},
-			  {"date":"23.04.2024","day":"Tuesday"},
-			  {"date":"24.04.2024","day":"Wednesday"},
+const days = [{"date":"08.07.2024","day":"Sunday"},
+			  {"date":"09.07.2024","day":"Monday"},
+			  {"date":"10.07.2024","day":"Tuesday"},
+			  {"date":"11.07.2024","day":"Wednesday"},
 			  {"date":"00","day":"All events"}];
 var treks = [];
 var trekTab = '';
