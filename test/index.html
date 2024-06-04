@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+
+	<!-- <link rel="icon" type="image/x-icon" href=""> -->
+	<link href="/css/lk-style.css?4" rel="stylesheet">
+	
+</head>
+<body>
+<div class="page ">
+	<div class="toggle-nav js-toggle-nav">
+		<a href="#" class="toggle-close js-toggle-close"></a>
+		<ul class="toggle-menu disable">
+			<li><a id="profile-mob" class="header-menu__link js-toggle-close" onclick="toMenuTab('#profile');">Профиль</a></li>
+			<li><a id="participants-mob" class="header-menu__link js-toggle-close" onclick="toMenuTab('#participants');">Сотрудники</a></li>
+			<li><a id="pay-mob" class="header-menu__link js-toggle-close disable" onclick="toMenuTab('#pay');">Оплата</a></li>
+		</ul>
+		<a id="lang-mob" href="/en/group/" class="lang">EN</a>	
+		<div id="exit-mob" class="header-nav__btn exit disable" onclick="exit();">Выход</div>
+	</div>	
+	<header class="header">
+		<div class="header__inner">
+			<div class="logo">
+				<img src="/img/logo.svg" width="178" alt="">
+			</div>		
+			<ul class="header-menu disable">
+				<li><a id="profile" class="header-menu__link" onclick="toMenuTab('#profile');">Профиль</a></li>
+				<li><a id="participants" class="header-menu__link" onclick="toMenuTab('#participants');">Сотрудники</a></li>
+				<li><a id="pay" class="header-menu__link disable" onclick="toMenuTab('#pay');">Оплата</a></li>
+			</ul>
+			<div class="header-nav">
+				<div class="header-nav__btns">
+					<a id="lang" href="/en/group/" class="lang">EN</a>	
+					<div id="exit" class="header-nav__btn exit disable" onclick="exit();">Выход</div>
+				</div>						
+			</div>	
+			<a href="#" class="toggle js-toggle"></a>			
+		</div>
+	</header>
+	<main class="page__main">
+		<div>
+			<div id="embeddedApp" api-key="048bc7ff124ac8a7b116378f0709de5b482ab0674e0355d83323332c49d49f4142d5e4cd54f1e241d5c78689b27ab018" lng-code = "ru" server="innopromserver.accredcenter.ru"></div>
+
+			<script type="text/javascript" src="https://aijapp.accredcenter.ru/embedded-app.js"></script>
+		</div>
+		
+	</main>
+	<footer class="footer">
+		<div class="footer__inner">
+			<a href="https://expo.innoprom.com/" target="_blank" class="logo">
+				<img src="/img/logo-wh.svg" width="260" alt="">
+			</a>
+			<div class="footer__item">
+				<p>Требуется помощь с регистрацией?</p>
+				<div class="footer__btns">
+					<a class="footer__btns__item" href="mailto:innoprom@accredcenter.ru">
+						<img src="/img/mail2.svg" alt="">
+						<span>innoprom@accredcenter.ru</span>
+					</a>
+					<a class="footer__btns__item" href="tel:+74994600703">
+						<img src="/img/phone.svg" alt="">
+						<span>+7(499)460-07-03</span>
+					</a>					
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/js/lk-script.js"></script>
+<script type="text/javascript" src="/js/lang-script.js"></script>
+</body>
+</html>

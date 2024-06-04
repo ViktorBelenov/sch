@@ -536,7 +536,7 @@ body {
     display: flex;
     justify-content: flex-end;
     gap: 10px; 
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 .event-modal__add-favorite {
@@ -685,7 +685,6 @@ body {
     margin-bottom: 5px;
 }
 .event-modal__subtitle {
-    padding-left:30px;
     font-size: 22px;
     letter-spacing: .5px;
     text-transform: uppercase;
@@ -770,6 +769,6 @@ MuiCircularProgress-root{color: #E50069!important;}.CircularContainer svg circle
 /* } */ 
 
 li::marker {
-    color: red;
+    color: #ED0F69;
     }
     

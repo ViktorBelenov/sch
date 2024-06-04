@@ -3,6 +3,7 @@
 
 const id = '1443945';
 
+
 const FIELDS = {
 	'concent' : {
 		'field': 37178,
@@ -143,7 +144,7 @@ function toMenuTab(MenuTab) {
 		document.querySelector('#schedule-main').classList.add('disable');
 	}
 	if (!!localStorage.getItem("active_tab") && (localStorage.getItem("active_tab") != '')) {
-    removeClass(localStorage.getItem("active_tab"),'active')
+        removeClass(localStorage.getItem("active_tab"),'active');
 		removeClass(localStorage.getItem("active_tab") + '-mob','active');
 		
 		togClass(MenuTab,'active');

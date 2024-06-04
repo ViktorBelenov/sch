@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Расписание</title>
+  <!--link rel="shortcut icon" href="./img/outline_swap_horiz_black_18dp.png" type="image/png"/-->
+  <link rel="stylesheet" href="./css/styletabs.css">
+  <link rel="stylesheet" href="./css/swiper.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div id="embeddedApp" api-key="682587d0dd3fb59118c0dd070cdb5c9978014d1c676cd18d0bacb33a58edab68ee28c5c318ccb0390f01e3bdde704789" lng-code = "ru" server="innopromserver.accredcenter.ru"></div>
+<div class="container-fluid">
+	<div id="schedule-main" class="programm disable">
+		<div class="programm__nav">
+			<div class="programm__nav__item" onclick="toMainTab('tab-date');">
+				<a id="tab-date" class="active">по дням <i class="fa fa-calendar-o"></i></a>
+			</div>
+			<div class="programm__nav__item" onclick="toMainTab('tab-trek');">
+				<a id="tab-trek" class="">по тематическим трекам</a>
+			</div>
+			<div class="programm__nav__item" onclick="toMainTab('tab-on');">
+				<a id="tab-on" class="">избранное</a>
+			</div>
+		</div>
+
+		<div class="programm__nav__content">
+
+			<!-- TAB-CONTENT--1 -->
+			<div class="tab-content active" id="tab-date-content">
+				<div id="tabs-dates" class="programm__subtabs">
+						
+				</div>
+				<div id="dates-programm" class="programm__subtabs__content">
+					
+					
+				</div>
+			</div>
+			<!-- // TAB-CONTENT--1 -->
+
+			<!-- TAB-CONTENT--2 -->
+			<div class="tab-content disable" id="tab-trek-content" >
+				<div class="programm__subtabs-track">
+					
+					
+				</div>
+				<div id="treks-programm" class="programm__subtabs__content">
+									
+				</div>				
+			</div><!-- //TAB-CONTENT--2 -->
+			
+			<!-- TAB-CONTENT--3 -->
+			<div class="tab-content disable" id="tab-on-content">
+				<div class="programm__subtabs__content">
+					<div id="cards-on" class="programm-list">	
+					
+					</div>
+				</div>
+				
+			</div><!-- //TAB-CONTENT--3 -->
+
+			
+		</div>
+
+	</div>
+</div>
+	
+	
+	
+
+	<button id="popup-close-button" class="disable" onclick="closePopup();"></button>
+
+	
+		
+	
+	<script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="./js/genStandardTabs.js"></script>
+	<script type="text/javascript" src="./js/scheduleTabs.js"></script>
+	<script type="text/javascript" src="./js/swiper.min.js"></script>
+	<script type="text/javascript" src="https://aijapp.accredcenter.ru/embedded-app.js"></script>
+</body>
+</html>	

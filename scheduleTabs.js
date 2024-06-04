@@ -40,6 +40,8 @@ function genSchedule() {
 			genEventCardAll(obj);
 		});
 		initSlider();
+		getEvents();
+		// Не забудь убрать из рабочей версии в ллк скрипт
 	})
 };
 
@@ -67,7 +69,7 @@ function getEvents() {
 			console.log(myEvents);
 
 		  addMyEvents();
-			genMyEvents();
+		  genMyEvents();
 		  initSlider();
         } 
     }
@@ -172,7 +174,7 @@ function genEventPopup(obj) {
           <div class="event-modal__body">
 					  <div class="event-modal__container">
               <div class="event-modal__category">Тематический трек</div>
-              <div class="event-modal__subtitle" style="color:'${obj.trek_color}';">${obj.trek}</div>
+              <div class="event-modal__subtitle" style="color:${obj.trek_color};">${obj.trek}</div>
               <div class="event-modal__info">
                 <div class="event-modal__date">
                   <div>
@@ -211,21 +213,24 @@ function genEventPopup(obj) {
 function addMyEvents() {
 	console.log('addMyEvents');
 	console.log(myEvents);
-	for (let i = 0; i < myEvents.length; i++) {
+	for (let i = 0; i < myEvents.length; i++) {		
 		if (!!document.getElementById('card-date-' + myEvents[i])) {
 			console.log('card-trek-' + myEvents[i]);
 			document.getElementById('card-date-' + myEvents[i]).classList.toggle('on');
+			console.log('card-date-' + myEvents[i]);
 			document.querySelector('.card-all-' + myEvents[i]).classList.toggle('on');
 			// document.getElementById('card-trek-' + myEvents[i]).classList.toggle('on');			
+
 			document.getElementById('event-popup-' + myEvents[i]).classList.toggle('on');
-			// document.getElementById('add-' + myEvents[i]).classList.toggle('on');
-			document.getElementById('add-' + myEvents[i]).classList.toggle('disable');
+			document.getElementById('add-' + myEvents[i]).classList.toggle('on');
+			// document.getElementById('add-' + myEvents[i]).classList.toggle('disable');
 			// document.getElementById('drop-' + myEvents[i]).classList.toggle('disable');
 		}
 	}
 }
 
 function genMyEvents() {
+	console.log('genMyEvents');
 	events.forEach(function(obj) { 
 		if (myEvents.includes(Number(obj.id))) {
 			genEventCardMy(obj); 
