@@ -3,7 +3,21 @@ var myId = '1447023';
 var myEvents = [];
 var events = [];
 const server = 'https://eventline.accreditation.ru';
-
+const HALLORDER = {
+	'Зал 2.1': 1,
+	'Зал 3.1': 2,
+	'Зал 3.2': 3,
+ 	'Зал 3.3': 4,
+	'Зал 3.4': 5,
+	'Зал 3.5': 6,
+	'Зал 3.6': 7,
+	'Зал 3.7': 8,
+	'Зал 3.8': 9,
+	'Зал 3.9': 10,
+	'Зал 3.10': 11,
+	'Терасса Холл': 12,
+	'Зал Форум Холл': 13
+};
 //genTimeline();
 
 /*function onA5000Login() {
@@ -25,6 +39,9 @@ function genSchedule() {
 		events = json;
 		console.log('до сортировки');
 		console.log(events.map((a) => a.time_start));
+		events.sort(function(a, b) {
+			return HALLORDER[a.hall] = HALLORDER[b.hall];
+		})
 		events.sort(function(a, b) {
 			return parseFloat(a.time_start.replace(':','')) - parseFloat(b.time_start.replace(':',''));
 		});
