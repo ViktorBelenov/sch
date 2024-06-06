@@ -16,7 +16,8 @@ const HALLORDER = {
 	'Зал 3.9': 10,
 	'Зал 3.10': 11,
 	'Терасса Холл': 12,
-	'Зал Форум Холл': 13
+	'Зал Форум Холл': 13,
+	'': 14
 };
 //genTimeline();
 
@@ -38,10 +39,13 @@ function genSchedule() {
 	$.getJSON(server + "/json/events.json", function (json) {
 		events = json;
 		console.log('до сортировки');
-		console.log(events.map((a) => a.time_start));
+		console.log(events.map((a) => a.hall));
 		events.sort(function(a, b) {
-			return HALLORDER[a.hall] = HALLORDER[b.hall];
+			console.log(HALLORDER[b.hall] - HALLORDER[a.hall])
+			return HALLORDER[a.hall] - HALLORDER[b.hall];
 		})
+		console.log('После сортировки');
+		console.log(events.map((a) => a.hall));
 		events.sort(function(a, b) {
 			return parseFloat(a.time_start.replace(':','')) - parseFloat(b.time_start.replace(':',''));
 		});
