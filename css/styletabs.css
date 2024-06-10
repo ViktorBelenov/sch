@@ -776,3 +776,14 @@ li::marker {
     color: #ED0F69;
     }
     
+
+.swiperPopup {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+}
+
+.programm-swiper-popup-card .swiper-slide span {
+    display: none;
+}

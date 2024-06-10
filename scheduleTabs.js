@@ -214,8 +214,18 @@ function genEventPopup(obj) {
                 <div class="event-modal__address"${obj.hall!=''? '':'disabled'}>${obj.hall!=''? ''+ obj.hall:''}</div>
                 <div class="event-modal__partner">
                   <div class='event-modal__partner__title${obj.partner_img!=''? '':' disable'}'>Партнер<br> мероприятия</div>
-                  <div class="event-modal__partner__list">${obj.partner_img.replace(/;/g,'')}</div>
-                  </div>
+
+				  <div class="swiperContainer">
+
+				  	<div class="programm-card__logo">
+						<div class="swiperPopup swiper-container-horizontal">
+							<div class="swiper-wrapper programm-swiper-popup-card"> ${obj.partner_logo.replace(/;/g,'')}</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+
+				  </div>
+                </div>
               </div>
               ${obj.description}
             </div>
@@ -228,7 +238,7 @@ function genEventPopup(obj) {
 `
 	)
 }
-
+//                   <div class="event-modal__partner__list">${obj.partner_img.replace(/;/g,'')}</div>
 
 
 function addMyEvents() {
@@ -279,4 +289,33 @@ function initSlider() {
 			clickable: true,
 		},
 });
+
+// var swiperPopup = new Swiper(".swiperPopup", {
+// 	spaceBetween: 0,
+// 	centeredSlides: true,
+// 	watchOverflow: true,
+// 	loop: false,
+// 	autoplay: {
+// 		delay: 3000,
+// 		disableOnInteraction: false,
+// 	},
+// 	pagination: {
+// 		el: ".swiper-pagination",
+// 		clickable: true,
+// 	},
+// });
+
+var swiper = new Swiper(".swiperPopup", {
+	slidesPerView: 1,
+	spaceBetween: 30,
+	loop: true,
+	autoplay: {
+	  delay: 3000,
+	  disableOnInteraction: false,
+	},
+	pagination: {
+	  el: ".swiper-pagination",
+	  clickable: true,
+	}
+  });
 }
