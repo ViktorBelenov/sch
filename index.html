@@ -115,7 +115,8 @@
 					<!-- TAB-CONTENT--3 -->
 					<div class="tab-content disable" id="tab-on-content">
 						<div class="programm__subtabs__content">
-							<div id="cards-on" class="programm-list">	
+							<button onclick="generatePDF()">Скачать избранное в PDF</button>	
+							<div id="cards-on" class="programm-list favorite-taby">	
 							
 							</div>
 						</div>
@@ -158,8 +159,8 @@
 				<div class="footer__btns">
 					<a class="footer__btns__item" href="mailto:innoprom-tashkent@accreditation.ru">
 						<img src="/img/mail.svg" alt="">
-						<span>innoprom-tashkent@accreditation.ru</span>
-					</a>				
+						<span>innoprom-tashkent@accreditation.ru</span>						
+					</a>			
 				</div>
 			</div>
 		</div>
@@ -167,12 +168,17 @@
 	</div>
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+
 <script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="html2canvas.js"></script>
 <script type="text/javascript" src="swiper.min.js"></script>
 <script type="text/javascript" src="scheduleTabs.js"></script>
 <script type="text/javascript" src="genStandardTabs.js"></script>
 <script type="text/javascript" src="llk-script.js"></script>
 <script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="pdf.js"></script>
 <script>
 	
 !(function($) {
