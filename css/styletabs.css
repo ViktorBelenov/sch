@@ -569,6 +569,33 @@ body {
         font-size: 10px;
     }
 }
+.pdf-button {
+    justify-content: center;
+    right: 30px;
+    top: 50px;
+    cursor: pointer;
+    border: 1px solid #8B8788;
+    color: #737373;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 17px 15px;
+    min-width: 175px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+@media (max-width: 900px){
+    .pdf-button {
+        position: static;
+        margin-bottom: 20px;
+        width: 130px;
+        min-width: auto;
+        padding: 10px;
+        right: 20px;
+        font-size: 10px;
+    }
+}
 
 .event-modal__add-favorite:hover,
 .event-modal__add-favorite.active {

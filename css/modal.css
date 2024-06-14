@@ -84,6 +84,20 @@
 	min-width: 175px;
 	border-radius: 3px;
 	background-color: #fff;
+
+	
+}
+
+@media (max-width: 900px){
+    .modal-close {
+        position: static;
+        margin-bottom: 20px;
+        width: 130px;
+        min-width: auto;
+        padding: 10px;
+        right: 20px;
+        font-size: 10px;
+    }
 }
 
 .modal-close:hover {
